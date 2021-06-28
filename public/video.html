@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap core CSS -->
+		<link href="dist/css/lib/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<!-- Swipe core CSS -->
+		<link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
+		<!-- Favicon -->
+		<link href="dist/img/favicon.png" type="image/png" rel="icon">
+		<!-- Javascript -->
+		<script src="/socket.io/socket.io.js"></script>
+    <title>Video Chat</title>
+</head>
+<body>
+  <div class="layout">
+    <!-- Start of Navigation -->
+    <div class="navigation">
+      <div class="container">
+        <div class="inside">
+          <div class="nav nav-tab menu">
+            <button class="btn"><img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar"></button>
+            <a href="#members" ><i class="material-icons">account_circle</i></a>
+            <a href="index.html" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
+            <a href="video.html"  class="f-grow1 active"><span class="material-icons">videocam</span></a>
+            <button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End of Navigation -->
+  <div class="btn">
+    <a href="/create-room/">Create Room</a>
+  </div>
+
+  </div>
+</body>
+</html>
