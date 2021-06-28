@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+    transition: opacity linear 1s, width linear 1s;
+    font-size: 20px;
+  }
+a {
+    color: inherit;
+    transition: all .3s;
+}
+a, a:hover {
+  text-decoration: none;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#video-grid{
+    display: flex;
+    justify-content: center;
+}
+
+video{
+  
+  height: 300px;
+  width: 400px; /*so that it fits within the grid */
+}
+
+.main{
+    display: flex;
+    height: 91vh;
+}
+.main_left{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+
+}
+#main_videos{
+    flex-grow: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.main_right{
+    flex:0.2;
+    width: 300px;
+    display: flex;
+    flex-direction: column; 
+}
+.main_controls {
+  background-color: #1C1E20;
+  justify-content: space-between;
+  display: flex;
+  font-size: 10px;
+}
+
+.main_controls_block{
+  color: #D2D2D2;
+  display: flex;
+  
+  padding: 5px;
+}
+
+.main_controls_button{
+  padding:8px;
+  min-width: 80px;
+  cursor: pointer;
+  
+  justify-content: center;
+  align-items: center;
+}
+.main_mute_button, .main_video_button{
+  display: flex;
+  flex-direction: column;
+}
+.main_right {
+  flex-grow: 1;
+  background-color: #ebebeb;
+  border-left: 1px solid #161625;
+  height: 91vh;
+}
+.main_header {
+  padding-top: 5px;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_chat_window {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.messages{
+  color: rgb(34, 34, 34);
+  list-style: none;
+}
+
+.main_message_container {
+  padding: 22px 12px;
+  display: flex;
+}
+.main_message_container input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: #363636;
+}
+
+.leave_meeting {
+  color: #EB534B;
+}
+
+.unmute, .stop {
+  color: #CC3B33;
+}
