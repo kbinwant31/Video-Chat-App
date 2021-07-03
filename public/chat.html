@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap core CSS -->
+		<link href="dist/css/lib/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<!-- Swipe core CSS -->
+		<link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
+		<!-- Favicon -->
+		<link href="dist/img/favicon.png" type="image/png" rel="icon">
+    <title>Chat</title>
+</head>
+<body>
+  <div class="layout">
+  <!-- Start of Navigation -->
+  <div class="navigation">
+    <div class="container">
+        <div class="inside">
+            <div class="nav nav-tab menu">
+                <button class="btn"><i class="material-icons">account_circle</i></button>
+                <a href="chat.html" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
+                <a href="video.html"  class="f-grow1 active"><span class="material-icons">videocam</span></a>
+                <button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End of Navigation -->
+  <!-- Main body-->
+  <div class="main order-md-2">
+    <div class="start">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="content">
+            <h1>Chat with your friends!</h1>
+            <p>Enter your Username and Room name:</p>
+				<form action="index.html">
+					<div class="form-group">
+					<input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+					<button class="btn icon"><i class="material-icons">person_outline</i></button>
+					</div>
+					<div class="form-group">
+						<input type="text" name="room" id="chat_room" class="form-control" placeholder="Room" required>
+						<button class="btn icon"><i class="material-icons">groups</i></button>
+					</div>
+					<button type="submit" value="login" class="btn button">Enter</button>
+				</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End of Sign In -->
+				<!-- Start of Sidebar -->
+				<div class="aside order-md-2">
+					<div class="container">
+						<div class="col-md-12">
+							<div class="preference">
+								<h2>Hello, Friend!</h2>
+								<p>Enter your details and have fun chatting with your friends!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End of Sidebar -->
+			</div> <!-- Layout -->
+		</main>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="dist/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="dist/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="dist/js/vendor/popper.min.js"></script>
+		<script src="dist/js/bootstrap.min.js"></script>
+</body>
+</html>

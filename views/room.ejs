@@ -4,13 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teams Clone</title>
+  <title>Video Chat</title>
   <script>
     //to store the room ID from the nodeJS server in a variable
     const ROOM_ID = "<%= roomId %>"; 
     console.log(ROOM_ID);
-
-    console.log(user);
   </script>
   <link rel="stylesheet" href="/dist/css/style.css">
   <!-- Bootstrap core CSS -->
@@ -27,7 +25,7 @@
   <script src="/socket.io/socket.io.js"></script>
   <!-- make sure to write 'defer' for the script.js file so that
   the script is executed when the page has finished parsing-->
-  <script src="script.js" defer></script>
+  <script src="/dist/js/script.js" defer></script>
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script> 
 </head>
 <body>
@@ -37,10 +35,9 @@
     <div class="container">
       <div class="inside">
         <div class="nav nav-tab menu">
-          <button class="btn"><img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar"></button>
-          <a href="#members" ><i class="material-icons">account_circle</i></a>
-          <a href="index.html" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
-          <a href="video.html"  class="f-grow1 active"><span class="material-icons">videocam</span></a>
+          <button class="btn"><i class="material-icons">account_circle</i></button>
+          <a href="chat.html" data-toggle="tab" ><i class="material-icons">chat_bubble_outline</i></a>
+          <a href="video.html"  class="f-grow1 active"class="active"><span class="material-icons active">videocam</span></a>
           <button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
         </div>
       </div>
@@ -58,41 +55,54 @@
         <div class="main_controls">
           <div class="main_controls_block">
             <div onclick="muteUnmute()" class="main_controls_button main_mute_button">
-              <i class="fa fa-microphone"></i>
-              <span>Mute</span> 
+              <span class="material-icons">mic</span>
            </div>
            <div onclick="playStop()" class="main_controls_button main_video_button" >
-            <i class="fas fa-video"></i>            
-            <span>Stop Video</span>
+            <span class="material-icons">videocam</span>
            </div>
           </div>
           <div class="main_controls_block">
+            <a id="invite-button" title="Invite Friends"><span class="material-icons add_btn">person_add</span></a>
+          </div>
+          <div class="main_controls_block">
             <div class="main_controls_button" id="end-button">
-               <span class="leave_meeting">Leave Meeting</span>
+               <span class="leave_meeting" style="font-size: 14px;">Leave Meeting</span>
             </div>
          </div>
 
         </div>
 
       </div>
+      <div class="float-button"><button class="open-button" onclick="showChat()">Chat</button></div>
       <div id="chat" >
-        <div class="main_right">
-          <h5 class="main_header">CHAT</h5>
+        
+
+        <div class="main_right" style="max-width: 280px;">
+          <h5 class="main_header"></h5>
           <div class="main_chat_window">
             <ul class="messages">
                
             </ul>
 
-         </div>
-         <div class="main_message_container">
-          <input id="chat_message" type="text" placeholder="Type message here..." class="focus-visible" >
-       </div>
+          </div>
+          <div class="main_message_container">
+            <input id="chat_message" type="text" placeholder="Type message here..." class="focus-visible" >
+          </div>
         </div>
 
       </div>
 
     </div>
   </div>
-
+<script>
+  function showChat() {
+  var x = document.getElementById("chat");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>

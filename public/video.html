@@ -12,29 +12,68 @@
 		<link href="dist/img/favicon.png" type="image/png" rel="icon">
 		<!-- Javascript -->
 		<script src="/socket.io/socket.io.js"></script>
+    <script src="/dist/js/script.js" defer></script>
     <title>Video Chat</title>
 </head>
 <body>
   <div class="layout">
-    <!-- Start of Navigation -->
-    <div class="navigation">
+  <!-- Start of Navigation -->
+  <div class="navigation">
+    <div class="container">
+      <div class="inside">
+        <div class="nav nav-tab menu">
+          <button class="btn"><i class="material-icons">account_circle</i></button>
+          <a href="chat.html" data-toggle="tab" ><i class="material-icons">chat_bubble_outline</i></a>
+          <a href="video.html"  class="f-grow1 active"class="active"><span class="material-icons active">videocam</span></a>
+          <button class="btn power" onclick="visitPage();" href="sign-in.html"><i class="material-icons">power_settings_new</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Navigation -->
+  <!-- Main body-->
+  <div class="main order-md-2">
+    <div class="start">
       <div class="container">
-        <div class="inside">
-          <div class="nav nav-tab menu">
-            <button class="btn"><img class="avatar-xl" src="dist/img/avatars/avatar-male-1.jpg" alt="avatar"></button>
-            <a href="#members" ><i class="material-icons">account_circle</i></a>
-            <a href="index.html" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
-            <a href="video.html"  class="f-grow1 active"><span class="material-icons">videocam</span></a>
-            <button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+        <div class="col-md-12">
+          <div class="content">
+            <h1>Join your friends!</h1>
+            <p>Enter the invite URL below &<br>join your friends in the video call!</p>
+            <form class="signup">
+              <div class="form-group">
+                <input id="invite-link-input" class="form-control" type="text"  placeholder="Enter Invite Link"/>
+                <button class="btn icon"><span class="material-icons">link</span></button>
+              </div>
+              <button class="btn button" id="join-button" onclick="getInputValue();">Join Room</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  <!-- End of Navigation -->
-  <div class="btn">
-    <a href="/create-room/">Create Room</a>
+  </div>
+  <!-- End of Sign Up -->
+  <!-- Start of Sidebar -->
+  <div class="aside order-md-1">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="preference">
+          <h2 style="font-size: 40px;">Start Video Call</h2>
+          <p>Click to create a new room & <br>start chatting with your friends!</p>
+          <a href="/create-room/" class="btn button">Create Room</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  </div>
+  <!--End of main body-->
+  </div> <!--End of layout-->
+  <script>
+    // Invite Link Input
+function getInputValue() {
+  var url = document.getElementById("invite-link-input").value;
+  var code = url.split("/");
+  window.open(code[3]);
+}
+  </script>
 </body>
 </html>

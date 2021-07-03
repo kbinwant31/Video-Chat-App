@@ -1,4 +1,3 @@
-
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 
@@ -99,15 +98,15 @@ const muteUnmute = () => {
   //change mic icon buttons
   const setMuteButton = () => {
     const html = `
-      <i class="fas fa-microphone"></i>
-      <span>Mute</span>
+    <span class="material-icons">mic</span>
     `
     document.querySelector('.main_mute_button').innerHTML = html;
   }
   const setUnmuteButton = () => {
     const html = `
-      <i class="unmute fas fa-microphone-slash"></i>
-      <span>Unmute</span>
+    <span class="material-icons">
+    mic_off
+    </span>
     `
     document.querySelector('.main_mute_button').innerHTML = html;
   }
@@ -115,16 +114,14 @@ const muteUnmute = () => {
   //change icon
   const setStopVideo = () => {
     const html = `
-      <i class="fas fa-video"></i>
-      <span>Stop Video</span>
+    <span class="material-icons">videocam</span>
     `
     document.querySelector('.main_video_button').innerHTML = html;
   }
   //change icon
   const setPlayVideo = () => {
     const html = `
-    <i class="stop fas fa-video-slash"></i>
-      <span>Play Video</span>
+    <span class="material-icons">videocam_off</span>
     `
     document.querySelector('.main_video_button').innerHTML = html;
   }
@@ -145,9 +142,25 @@ const muteUnmute = () => {
 document.getElementById("end-button").addEventListener("click", endCall);
 
 function endCall() {
-  window.location.href = "/";
+  window.location.href = "/video.html";
 }
 
-//---------the chat room feature-----------------------
 
+// URL Copy To Clipboard
+document.getElementById("invite-button").addEventListener("click", getURL);
+
+function getURL() {
+  const c_url = window.location.href;
+  copyToClipboard(c_url);
+  alert("Url Copied to Clipboard,\nShare it with your Friends!\nUrl: " + c_url);
+}
+
+function copyToClipboard(text) {
+  var dummy = document.createElement("textarea");
+  document.body.appendChild(dummy);
+  dummy.value = text;
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+}
 

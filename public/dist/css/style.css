@@ -43,7 +43,7 @@ video{
 }
 #main_videos{
     flex-grow: 1;
-    background-color: black;
+    background-color: rgb(31, 31, 31);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ video{
   background-color: #1C1E20;
   justify-content: space-between;
   display: flex;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .main_controls_block{
@@ -77,15 +77,18 @@ video{
   justify-content: center;
   align-items: center;
 }
-.main_mute_button, .main_video_button{
+.main_mute_button, .main_video_button, .add_btn{
   display: flex;
   flex-direction: column;
+}
+#chat{
+  display: none;
 }
 .main_right {
   flex-grow: 1;
   background-color: #ebebeb;
   border-left: 1px solid #161625;
-  height: 91vh;
+  height: 100vh;
 }
 .main_header {
   padding-top: 5px;
@@ -124,4 +127,17 @@ video{
 
 .unmute, .stop {
   color: #CC3B33;
+}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  right: 0px;
+  width: 280px;
 }
