@@ -7,14 +7,14 @@
 		<meta name="description" content="#">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap core CSS -->
-		<link href="dist/css/lib/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link href="css/lib/bootstrap.min.css" type="text/css" rel="stylesheet">
 		<!-- Swipe core CSS -->
-		<link href="dist/css/swipe.min.css" type="text/css" rel="stylesheet">
+		<link href="css/swipe.min.css" type="text/css" rel="stylesheet">
 		<!-- Favicon -->
-		<link href="dist/img/favicon.png" type="image/png" rel="icon">
+		<link href="img/favicon.png" type="image/png" rel="icon">
 		<!-- Javascript -->
 		<script src="/socket.io/socket.io.js"></script>
-		<script src="/dist/js/chat.js" defer></script>
+		<script src="/js/chat.js" defer></script>
 		
 	</head>
 	<body>
@@ -50,7 +50,7 @@
 										<h1>Members</h1>
 										<div class=" list-group" id="users" role="tablist">
 											<!--a href="" class="filterDiscussions all single " id="list-chat-list" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/user.png" data-toggle="tooltip" title="username" alt="avatar">
+												<img class="avatar-md" src="img/avatars/user.png" data-toggle="tooltip" title="username" alt="avatar">
 												<div class="data">
 													<h5></h5>
 												</div>
@@ -106,8 +106,7 @@
 													<h5 id="room-name"></h5>
 													<span>Room</span>
 												</div>
-												<button class="btn connect d-md-block d-none" name="1"><i class="material-icons md-36">videocam</i></button>
-												<button class="btn d-md-block d-none"><i class="material-icons md-30">info</i></button>
+												<button class="btn connect d-md-block d-none" name="1"><a href="/create-room/"><i class="material-icons md-36">videocam</i></a></button>
 												<div class="dropdown">
 													<button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
 													<div class="dropdown-menu dropdown-menu-right">
@@ -150,7 +149,7 @@
 											<div class="inside">
 												<div class="panel">
 													<div class="participant">
-														<img class="avatar-xxl" src="dist/img/avatars/user.png" alt="avatar">
+														<img class="avatar-xxl" src="img/avatars/user.png" alt="avatar">
 														<span>Connecting</span>
 													</div>							
 													<div class="options">
@@ -177,11 +176,11 @@
 		<!-- Bootstrap/Swipe core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="dist/js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script>window.jQuery || document.write('<script src="dist/js/vendor/jquery-slim.min.js"><\/script>')</script>
-		<script src="dist/js/vendor/popper.min.js"></script>
-		<script src="dist/js/swipe.min.js"></script>
-		<script src="dist/js/bootstrap.min.js"></script>
+		<script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="js/vendor/popper.min.js"></script>
+		<script src="js/swipe.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</body>
 </html>

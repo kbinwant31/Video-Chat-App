@@ -115,6 +115,7 @@ so that it fits within the grid */
 .messages{
   color: rgb(34, 34, 34);
   list-style: none;
+  padding: 20px;
 }
 
 .main_message_container {

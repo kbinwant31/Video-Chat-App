@@ -37,7 +37,7 @@ function outputUsers(users) {
   users.forEach((user) => {
     $('.list-group').append(`
     <a href="" class="filterDiscussions all single " id="list-chat-list" data-toggle="list" role="tab">
-      <img class="avatar-md" src="dist/img/avatars/user.png" data-toggle="tooltip" title="username" alt="avatar">
+      <img class="avatar-md" src="img/avatars/user.png" data-toggle="tooltip" title="username" alt="avatar">
       <div class="data">
         <h5>${user.username}</h5>
       </div>
@@ -104,7 +104,7 @@ function outputUserMessage(text) {
   const div = document.createElement('div');
   div.classList.add('message');
   div.innerHTML = `
-  <img class="avatar-md" src="dist/img/avatars/user.png" data-toggle="tooltip" data-placement="top" title="${text.username}" alt="avatar">
+  <img class="avatar-md" src="img/avatars/user.png" data-toggle="tooltip" data-placement="top" title="${text.username}" alt="avatar">
   <div class="text-main">
 		<div class="text-group">
     <span>${text.username}</span>

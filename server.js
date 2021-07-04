@@ -3,7 +3,7 @@ const app = express();
 const server = require('http').Server(app);
 
 //to convert message to an object with user id and time
-const formatMessage = require('./public/dist/utils/messages');
+const formatMessage = require('./public/utils/messages');
 
 //use socket to make a real time connection
 const io = require('socket.io')(server);
@@ -17,7 +17,7 @@ const {
     getCurrentUser,
     userLeave,
     getRoomUsers
-} = require('./public/dist/utils/user');
+} = require('./public/utils/user');
 
 //import peer
 const { ExpressPeerServer } = require('peer');
