@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
-const redirect = require("express-redirect");
-redirect(app);
+
 //to convert message to an object with user id and time
 const formatMessage = require('./public/dist/utils/messages');
 
@@ -11,10 +10,6 @@ const io = require('socket.io')(server);
 
 //to generate random room Id
 const { v4:uuidv4 } = require('uuid');
-
-//for getting login credentials
-const bodyParser = require('body-parser'); // Middleware
-app.use(bodyParser.urlencoded({ extended: false }));
 
 //For chatroom
 const {
@@ -32,20 +27,15 @@ const peerServer = ExpressPeerServer(server, {
 
 app.set('view engine','ejs');
 app.use(express.static('public'));
+
+//setup peer server
 app.use('/peerjs', peerServer);
 
-app.redirect("", "/login");
 
-// Route to Homepage
-app.get('/chat', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+// Route to Chat login page
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/chat.html');
 }); 
-
-// Route to Login Page
-app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/public/sign-in.html');
-});
-
 
 //create video-chat room
 app.get("/create-room/", (req, res) => {
@@ -55,17 +45,19 @@ app.get("/create-room/", (req, res) => {
 app.get('/:room',(req,res) => {
     res.render('room',{ roomId : req.params.room })
 })
+
 //when the user makes a connection on the socket
 io.on('connection', socket => {
-    
+    console.log("Made a socket connection.");
+
+    //on joining chat room
     socket.on('join-chat-room',({username,room}) => {
         const user = userJoin(socket.id, username, room);
         socket.join(user.room);
         //welcome user
-        socket.emit('notification',formatMessage('Admin','Welcome to Teams Clone!'));
+        socket.emit('notification',formatMessage('Admin',`Welcome to ${room}!`));
         // Broadcast when a user connects
-        socket.broadcast.to(user.room).emit('notification',
-        formatMessage('Admin', `${user.username} has joined the chat!`));
+        socket.broadcast.to(user.room).emit('notification',formatMessage('Admin', `${user.username} has joined the chat!`));
 
         // Send users and room info
         io.to(user.room).emit('roomUsers', {
@@ -108,15 +100,15 @@ io.on('connection', socket => {
         socket.broadcast.to(roomId).emit('user-connected', userId);
         socket.on('message', message => {
             io.to(roomId).emit('createMessage', message);
-
         });
         
     });
 
-    
-
     //When user diconnects
-    
+
+    socket.on('diconnect', () => {
+      socket.to(roomId).broadcast.emit('user-disconnected', userId);
+    });
 })
 
 const port = 3030 || process.env.port; // Port we will listen on
