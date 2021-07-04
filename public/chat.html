@@ -16,27 +16,27 @@
   <div class="layout">
   <!-- Start of Navigation -->
   <div class="navigation">
-    <div class="container">
+     <div class="container">
         <div class="inside">
             <div class="nav nav-tab menu">
                 <button class="btn"><i class="material-icons">account_circle</i></button>
                 <a href="chat.html" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
                 <a href="video.html"  class="f-grow1 active"><span class="material-icons">videocam</span></a>
-                <button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+                <button href="chat.html" class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
             </div>
         </div>
-    </div>
-    </div>
+     </div>
+     </div>
     <!-- End of Navigation -->
-  <!-- Main body-->
-  <div class="main order-md-2">
-    <div class="start">
-      <div class="container">
-        <div class="col-md-12">
-          <div class="content">
-            <h1>Chat with your friends!</h1>
-            <p>Enter your Username and Room name:</p>
-				<form action="index.html">
+  	<!-- Main body-->
+  	<div class="main order-md-2">
+    	<div class="start">
+      	<div class="container">
+        	<div class="col-md-12">
+          	<div class="content">
+            	<h1>Chat with your friends!</h1>
+            	<p>Enter your Username and Room name:</p>
+				<form action="chat-room.html">
 					<div class="form-group">
 					<input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
 					<button class="btn icon"><i class="material-icons">person_outline</i></button>
@@ -47,26 +47,24 @@
 					</div>
 					<button type="submit" value="login" class="btn button">Enter</button>
 				</form>
-								</div>
-							</div>
-						</div>
-					</div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- End of Sign In -->
+	<!-- Start of Sidebar -->
+	<div class="aside order-md-2">
+		<div class="container">
+			<div class="col-md-12">
+				<div class="preference">
+					<h2>Hello, Friend!</h2>
+					<p>Enter your details and have fun chatting with your friends!</p>
 				</div>
-				<!-- End of Sign In -->
-				<!-- Start of Sidebar -->
-				<div class="aside order-md-2">
-					<div class="container">
-						<div class="col-md-12">
-							<div class="preference">
-								<h2>Hello, Friend!</h2>
-								<p>Enter your details and have fun chatting with your friends!</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End of Sidebar -->
-			</div> <!-- Layout -->
-		</main>
+			</div>
+		</div>
+	</div><!-- End of Sidebar -->
+	</div> <!-- Layout -->
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->

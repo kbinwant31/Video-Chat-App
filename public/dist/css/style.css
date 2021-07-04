@@ -22,13 +22,20 @@ a, a:hover {
 
 #video-grid{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-video{
-  
+/*To show other user's video stream
+so that it fits within the grid */
+.userVideo video{ 
   height: 300px;
-  width: 400px; /*so that it fits within the grid */
+  width: 400px; 
+}
+/*To show my video stream */
+.myVideo video{
+  height: 80px;
+  width: 100px;
 }
 
 .main{
@@ -59,7 +66,7 @@ video{
   background-color: #1C1E20;
   justify-content: space-between;
   display: flex;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .main_controls_block{
@@ -77,7 +84,7 @@ video{
   justify-content: center;
   align-items: center;
 }
-.main_mute_button, .main_video_button, .add_btn{
+.main_mute_button, .main_video_button, .add_btn, .chat_btn{
   display: flex;
   flex-direction: column;
 }

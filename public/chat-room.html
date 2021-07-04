@@ -28,7 +28,7 @@
 								<button class="btn"><i class="material-icons">account_circle</i></button>
 								<a href="chat.html" data-toggle="tab" class="active"><i class="material-icons active">chat_bubble_outline</i></a>
 								<a href="video.html"  class="f-grow1 active"><span class="material-icons">videocam</span></a>
-								<button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+								<button href="chat.html" class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
 							</div>
 						</div>
 					</div>
@@ -43,10 +43,7 @@
 								<!-- Start of Discussions -->
 								<div id="discussions" class="tab-pane fade active show">
 									<div class="search">
-										<form class="form-inline position-relative">
-											<input type="search" class="form-control" id="conversations" placeholder="Search for members...">
-											<button type="button" class="btn btn-link loop"><i class="material-icons">search</i></button>
-										</form>
+										
 										<button class="btn create" data-toggle="modal" data-target="#startnewchat" title="Create new chatroom!"><i class="material-icons">create</i></button>
 									</div>					
 									<div class="discussions">
@@ -78,15 +75,6 @@
 							</div>
 							<div class="content">
 								<form>
-									<!--div class="form-group">
-										<label for="participant">Recipient:</label>
-										<input type="text" class="form-control" id="participant" placeholder="Add recipient..." required>
-										<div class="user" id="recipient">
-											<img class="avatar-sm" src="dist/img/avatars/user.png" alt="avatar">
-											<h5>Keith Morris</h5>
-											<button class="btn"><i class="material-icons">close</i></button>
-										</div>
-									</div-->
 									<div class="form-group">
 										<label for="topic">Room Name:</label>
 										<input type="text" class="form-control" id="roomName" placeholder="Enter room name..." required>
@@ -118,18 +106,14 @@
 													<h5 id="room-name"></h5>
 													<span>Room</span>
 												</div>
-												<button class="btn connect d-md-block d-none" name="1"><i class="material-icons md-30">phone_in_talk</i></button>
 												<button class="btn connect d-md-block d-none" name="1"><i class="material-icons md-36">videocam</i></button>
 												<button class="btn d-md-block d-none"><i class="material-icons md-30">info</i></button>
 												<div class="dropdown">
 													<button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
 													<div class="dropdown-menu dropdown-menu-right">
-														<button class="dropdown-item connect" name="1"><i class="material-icons">phone_in_talk</i>Voice Call</button>
 														<button class="dropdown-item connect" name="1"><i class="material-icons">videocam</i>Video Call</button>
 														<hr>
 														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
-														<button class="dropdown-item"><i class="material-icons">block</i>Block Contact</button>
-														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
 													</div>
 												</div>
 											</div>
@@ -199,11 +183,5 @@
 		<script src="dist/js/swipe.min.js"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script>
-			function scrollToBottom(el) { el.scrollTop = el.scrollHeight; }
-			scrollToBottom(document.getElementById('content'));
-		</script>
 	</body>
-
-
 </html>
